@@ -1,0 +1,11 @@
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        maxSum = sum(nums)
+        sumArray = 0
+        for num in nums:
+            sumArray += num
+            if(sumArray>maxSum):
+                maxSum = sumArray
+            if(sumArray<0):
+                sumArray = 0
+        return maxSum
